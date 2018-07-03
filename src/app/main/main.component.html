@@ -1,0 +1,39 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="col-md-12">
+      <div class="col-md-12">
+          <h2> Invoicing </h2>
+          <div class="row">
+              <button class="btn btn-outline-info btn-sm pull-right" (click)="addInvoice()"> Add New Invoice </button>
+          </div>
+          <br />
+      
+          <table class="table table-bordered table-sm">
+              <thead>
+              <tr>
+                <th>Id</th>
+                <th>Client Name</th>
+                <th>VAT Rate</th>
+                <th>Invoice Date</th>
+                <th>Sub-Total</th>
+                <th>VAT Amount</th>
+                <th>Total</th>
+                <th>&nbsp;</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let invoice of invoices">
+                <td> {{invoice.id}}</td>
+                <td> {{invoice.client}}</td>
+                <td> {{invoice.vatRate}}</td>
+                <td> {{invoice.invoiceDate}}</td>
+                <td> {{invoice.subTotal}}</td>
+                <td> {{invoice.vat}}</td>
+                <td> {{invoice.total}}</td>
+                <td>
+                    <button class="btn btn-primary" (click)="viewInvoice(invoice)"> view</button>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+        </div>
+</div>

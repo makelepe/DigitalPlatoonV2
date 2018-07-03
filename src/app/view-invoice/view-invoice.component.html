@@ -1,0 +1,45 @@
+<div class="col-md-12">
+        <div>
+
+            <h1>Invoice for {{ invoice.client }}</h1>
+
+            <ul>
+              <li><strong>Id:</strong> {{ invoice.id }}</li>
+              <li><strong>Client:</strong> {{ invoice.client }}</li>
+              <li><strong>vatRate:</strong> {{ invoice.vatRate }}</li>
+              <li><strong>vatRate:</strong> {{ invoice.invoiceDate }}</li>
+              <hr />
+              <li><strong>Sub Total:</strong> {{ invoice.subTotal }}</li>
+              <li><strong>VAT Amount:</strong> {{ invoice.vat }}</li>
+              <li><strong>Total:</strong> {{ invoice.total }}</li>
+            </ul>
+
+        </div>
+        <hr />
+
+        <button type="button" class="btn btn-success" (click)="close()">Ok</button>
+
+          <hr />
+        <div class="col-md-12 pl-2 pr-2">
+            <table class="table table-bordered table-sm">
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Quantity</th>
+                    <th>Description</th>
+                    <th>Unit Price</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of lineItems">
+                    <td> {{item.id}}</td>
+                    <td> {{item.quantity}}</td>
+                    <td> {{item.description}}</td>
+                    <td> {{item.unitPrice}}</td>
+                    <td> {{item.lineItemTotal}}</td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+</div>
